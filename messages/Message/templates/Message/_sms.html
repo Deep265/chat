@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% for i in sms_list %}
+ <div class="card card-body card-with-shadow">
+     {{ i.message }}
+ </div>
+{% endfor %}
+
+{% endblock %}

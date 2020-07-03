@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+
+    <!-- Alternative to Bootstrap 3 Glyphicons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar bg-light navbar-expand-lg">
+                <!-- Title -->
+                <div class="navbar-brand">
+                    <h1 class="waring">IoT.in</h1>
+                </div>
+                <!-- End of Title -->
+                <!--List of nav of items -->
+                <div class="navbar-nav ml-auto">
+
+                        <!--Authenticate Items -->
+                        {% if user.is_authenticated %}
+                         <a href="{% url 'messages:all' %}" class="nav-item nav-link">Messages</a></li>
+                         <a href="{% url 'messages:create_message' %}" class="nav-item nav-link">New Message</a> </li>
+                         <a href="{% url 'accounts:logout' %}" class="nav-item nav-link">Logout</a></li>
+                        <!--End of Authenticate Items -->
+                        {% else %}
+                        <a href="{% url 'accounts:login' %}" class="nav-item nav-link">Login</a> </li>
+                        <a href="{% url 'accounts:signup' %}" class="nav-item nav-link">SignUp Now</a> </li>
+                        {% endif %}
+
+
+                </div>
+                <!-- End of list of nav of items -->
+            </div>
+</nav>
+<!-- EndofNavbar -->
+{% block body %}
+{% endblock %}
+</body>
+</html>

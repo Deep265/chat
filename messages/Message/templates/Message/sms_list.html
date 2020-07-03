@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+         <div class="card card-body m-1">
+            {% for i in sms_list %}
+
+            <!-- Name of the user -->
+            <div class="py-1">
+                <h5> <a href="#">{{ i.user.username }} <span class="ml-auto" style="font-size:1rem">{{ i.created_at }}</span> </a></h5>
+            </div>
+
+            <!-- Message -->
+            <div class="">
+                <p>{{ i.message }}</p>
+            </div><hr>
+            <!-- EndofMessage -->
+            <!-- End of name of user -->
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

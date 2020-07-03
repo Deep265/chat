@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <!-- Name of the User -->
+            <div class="display-1">
+                <h3 class="text-center">{{ sms.user.username }} <span class="mr-auto">{{ sms.created_date }}</span> </h3>
+            </div>
+             {{ accounts.date_joined }}
+            <!-- End of Name of User -->
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
